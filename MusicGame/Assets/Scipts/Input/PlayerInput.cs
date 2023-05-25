@@ -6,6 +6,8 @@ public class PlayerInput : MonoBehaviour
 {
     PlayerInputActions inputActions;
     Vector2 Axes=>inputActions.GamePlay.Axis.ReadValue<Vector2>();
+    public bool isJump => inputActions.GamePlay.Jump.WasPressedThisFrame();
+    public bool isStopJump => inputActions.GamePlay.Jump.WasReleasedThisFrame();
     public bool isMove=>Axes.x!=0;
     public float MoveX=>Axes.x;
     public float MoveY=>Axes.y;

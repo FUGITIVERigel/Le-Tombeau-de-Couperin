@@ -5,7 +5,7 @@ public class StateMachine : MonoBehaviour
 {
     IState currentState;
 
-    protected Dictionary<System.Type, IState> stateTable;
+    public Dictionary<System.Type, IState> stateTable;
 
     private void Update()
     {
@@ -17,7 +17,7 @@ public class StateMachine : MonoBehaviour
         currentState.PhysicalUpdate();
     }
 
-    protected void SwitchOn(IState newState)
+    public void SwitchOn(IState newState)
     {
         currentState = newState;
         currentState.Enter();
